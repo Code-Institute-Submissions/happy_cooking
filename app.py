@@ -19,7 +19,8 @@ def index():
 
 @app.route('/recipes')
 def recipes():
-    return render_template("recipes.html")
+    return render_template("recipes.html",
+                            recipes=mongo.db.recipes.find())
 
 
 @app.route('/my_recipes')
@@ -36,5 +37,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
-            
-            
