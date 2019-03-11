@@ -32,7 +32,7 @@ def my_recipes():
 def login():
     return render_template("login.html")
 
-@app.route('/add_nrecipe')
+@app.route('/add_recipe')
 def add_recipe():
     return render_template("add_recipe.html")
 
