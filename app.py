@@ -32,6 +32,9 @@ def my_recipes():
 def login():
     return render_template("login.html")
 
+@app.route('/add_nrecipe')
+def add_recipe():
+    return render_template("add_recipe.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
