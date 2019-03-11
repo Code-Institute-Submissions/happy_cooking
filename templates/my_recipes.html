@@ -5,7 +5,9 @@
 
 <hr>
 
-   <div class="row">
+  
+  
+  <div class="row">
     <form action="" meathod="POST" class="col s12">
       <div class="row">
         <div class="input-field col s12">
@@ -13,25 +15,84 @@
           <input id="recipe_name" name="recipe_name" type="text" class="validate">
           <label for="icon_prefix">Recipe Name</label>
         </div>
+        </div>
         
+         <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">description</i>
           <textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea"></textarea> 
-          <label for="icon_telephone">Recipe Ingredients</label>
+          <label for="icon_recipe">Recipe Ingredients</label>
         </div>
       </div>
     </form>
   </div>
   
   
-         <div class="input-field col s12">
+  <div class="row">
+        <div class="input-field col s12">
           <i class="material-icons prefix">dvr</i>
-          <textarea name="recipe_instructions" id="recipe_instructions" class="materialize-textarea"></textarea> 
-          <label for="icon_telephone">Recipe Meathod</label>
+          <textarea name="recipe_meathod" id="recipe_meathod" class="materialize-textarea"></textarea> 
+          <label for="icon_meathod">Recipe Meathod</label>
         </div>
       </div>
     </form>
+    
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">dvr</i>
+          <textarea name="cooking_time" id="cooking_time" class="materialize-textarea"></textarea> 
+          <label for="icon_cooking_time">Cooking time</label>
+        </div>
+      </div>
+    </form>
+    
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">dvr</i>
+          <textarea name="recipe_author" id="recipe_author" class="materialize-textarea"></textarea> 
+          <label for="icon_author">author</label>
+        </div>
+      </div>
+    </form>
+    
+    <div class="row">
+        <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Breakfast</option>
+      <option value="2">Lunch</option>
+      <option value="3">Dinner</option>
+    </select>
+    <label>Meal Time</label>
   </div>
-        
+      </div>
+
+    
+    <div class="input-field col s12">
+    <select multiple>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Dairy-free</option>
+      <option value="2">Gluten-free</option>
+      <option value="3">Vegetarian/option>
+      <option value="3">Vegan</option>
+    </select>
+    <label>Dietary requirement</label>
+  </div>
+
+    </form>
+    
+  
+  <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </form>
+  
   
 {% endblock %}
