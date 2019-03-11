@@ -50,11 +50,20 @@
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"> Choose from a recipe or you can even add your own, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="recipes.html">Check out these recipes</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#recipes.html">Check out these recipes</a>
         </div>
+      </div>
     </div>
   </header>
-  
+<!-- main content -->
+    <div class="container">
+        
+        {% block content %}
+        {% endblock%}
+        
+    </div>
+
+    
  
   <!-- Footer -->
   <footer class="bg-light py-3">
@@ -74,13 +83,6 @@
   <!-- Custom scripts for this template -->
   <script src="{{url_for('static', filename='js/creative.min.js')}}"></script>
   
-  <script type="text/javascript">
-        $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
-        
-
-    </script>
   
   
 

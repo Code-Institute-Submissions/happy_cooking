@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
 
-       {% for recipe in recipes  | batch(3)  %}
+       {% for row in recipes  | batch(3)  %}
            
     <div class="row">
 
@@ -15,14 +15,19 @@
                         <p class="card-text">{{recipe.instructions}}</p>
                         <p class="card-text">{{recipe.cooking_time}}</p>
                         <p class="card-text">{{recipe.author}}</p>
+                        <p class="card-text">{{recipe.meal}}</p>
+                        <p class="card-text">{{recipe.dietary_requirement}}</p>  
+                        <p class="card-text">{{recipe.serves}}</p>
+                        </div>
 
                     <div class="card-footer">
                         <a href="{{url_for('recipes')}}" class="btn btn-primary btn-sm">More Info</a>
-                        </div>
                       </div>  
                     </div>
                 </div>
-            </div>
+                
+                
+                
             
         {% endfor %}
         
