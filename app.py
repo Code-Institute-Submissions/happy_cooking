@@ -49,25 +49,30 @@ def edit_recipe(recipe_id):
                            my_recipes=all_my_recipes)
 
     
-    
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    username = request.form['username']
-    password = request.form['password']
-    user = mongo.db.users.find({
-        'username': username
-    })
-    user = user[0]
-    if user:
-        if user['password'] == password:
-            session['username'] = username
-            return redirect(url_for('my_recipes'))
+    if request.methods == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = mongo.db.users.find({
+            'username': username
+        })
+        user = user[0]
+        if user:
+            if user['password'] == password:
+                session['username'] = username
+                return redirect(url_for('my_recipes'))
+            else:
+                return ('1 error')
         else:
-            return ('Invalid login credentials')
+            return ('2 error')
+        return render_template("login.html")
     else:
-        return ('Invalid login credentials')
-    return render_template("index")
-
+        return redirect(url_for('index'))    
+    
+    
+    
+    
 
 
 @app.route('/add_recipe')
