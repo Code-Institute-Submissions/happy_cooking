@@ -1,100 +1,75 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<h1>my recipes page</h1>
+    {% for recipe in my_recipes%}
 
 <hr>
 
-  
-  
-  <div class="row">
-    <form action="" meathod="POST" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">create</i>
-          <input id="recipe_name" name="recipe_name" type="text" class="validate">
-          <label for="icon_prefix">Recipe Name</label>
-        </div>
-        </div>
-        
-         <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">description</i>
-          <textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea"></textarea> 
-          <label for="icon_recipe">Recipe Ingredients</label>
-        </div>
-      </div>
-    </form>
-  </div>
-  
-  
-  <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">dvr</i>
-          <textarea name="recipe_meathod" id="recipe_meathod" class="materialize-textarea"></textarea> 
-          <label for="icon_meathod">Recipe Meathod</label>
-        </div>
-      </div>
-    </form>
+<ul class="collapsible" data-collapsible="accordion">
     
-    <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">access_time</i>
-          <textarea name="cooking_time" id="cooking_time" class="materialize-textarea"></textarea> 
-          <label for="icon_cooking_time">Cooking Time</label>
-        </div>
-      </div>
-    </form>
+    <li>
+      <div class="collapsible-header">
+          <div class="col s2">
+          <i class="material-icons">create</i>
+          </div>
+          <div class="col s1">
+              <div class="inline-action">
+                  <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"  class="waves-effect waves-light btn btn_small">Edit</a>
+              </div>
+          </div>
+          <div
+       <strong>Recipe Name</strong>
     
-    <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">person</i>
-          <textarea name="recipe_author" id="recipe_author" class="materialize-textarea"></textarea> 
-          <label for="icon_author">Author</label>
-        </div>
       </div>
-    </form>
-    
-    <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">person</i>
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Breakfast</option>
-      <option value="2">Lunch</option>
-      <option value="3">Dinner</option>
-    </select>
-    <label>Meal Type</label>
-  </div>
+     
+      <div class="collapsible-body"><span>{{ recipe.recipe_name }}</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">local_grocery_store</i>
+      <strong>Recipe Ingredients</strong>
+     
       </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_ingredients }}</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">description</i>
+      <strong>Recipe Instructions</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_instructions }}</span></div>
+    </li>
+    <li>
+  <div class="collapsible-header"><i class="material-icons">access_time</i>
+      <strong>Recipe Cooking Time</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_cooking_time }}</span></div>
+    </li>
+    <li>
+  <div class="collapsible-header"><i class="material-icons">person</i>
+      <strong>Author</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_author }}</span></div>
+    </li>
+    <li>
+  <div class="collapsible-header"><i class="material-icons">fastfood</i>
+      <strong>Meal Type</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_meal }}</span></div>
+    </li>
+    <li>
+  <div class="collapsible-header"><i class="material-icons">local_dining</i>
+      <strong>Dietary Requirement</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_dietary_requirement }}</span></div>
+    </li>
+    <li>
+  <div class="collapsible-header"><i class="material-icons">person</strong></i>
+     <strong>Serving Per Meal</strong>
+      </div>
+      <div class="collapsible-body"><span>{{ recipe.recipe_serves }}</span></div>
+    </li>
+ 
 
-    
-    <div class="input-field col s12">
-        <i class="material-icons prefix">restaurant</i>
-    <select multiple>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Dairy-free</option>
-      <option value="2">Gluten-free</option>
-      <option value="3">Vegetarian</option>
-      <option value="3">Vegan</option>
-    </select>
-    <label>Dietary Requirement</label>
-  </div>
-
-    </form>
-    
-  
-  <form action="#">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>File</span>
-        <input type="file">
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-  </form>
-  
-  
+ 
+    {% endfor %}
+<hr>
+  </ul>
 {% endblock %}

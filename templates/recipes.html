@@ -9,6 +9,7 @@
         
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
+                    <img src="/static/img/{{recipe.img}}" />
                     <div class="card-body">
                         <h2 class="card-title">{{recipe.name}}</h2>
                         <p class="card-text">{{recipe.ingredients}}</p>
@@ -21,7 +22,7 @@
                         </div>
 
                     <div class="card-footer">
-                        <a href="{{url_for('recipes')}}" class="btn btn-primary btn-sm">More Info</a>
+                        
                       </div>  
                     </div>
                 </div>

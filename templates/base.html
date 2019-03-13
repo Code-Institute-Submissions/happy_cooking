@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/creative.min.css')}}">
 
 </head>
+
     <body>
+      <div class="container">
+        
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#index.html">Happy Cooking</a>
@@ -50,7 +55,7 @@
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"> Choose from a recipe or you can even add your own, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#recipes.html">Check out these recipes</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{url_for('recipes')}}">Check out these recipes</a>
         </div>
       </div>
     </div>
@@ -59,6 +64,10 @@
     <div class="container">
         
         {% block content %}
+        
+
+        
+        
         {% endblock%}
         
     </div>
@@ -80,16 +89,20 @@
   <script src="{{url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
   <script src="{{url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
+  <!-- Materialize scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  
   <!-- Custom scripts for this template -->
   <script src="{{url_for('static', filename='js/creative.min.js')}}"></script>
   
   <script type="text/javascript">
-    $(document).ready(function(){
-    $('select').formSelect();
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
   });
-        
+   $(document).ready(function() {
+    $('select').material_select();
+  });
+         
   </script>
-  
-
     </body>
 </html>
