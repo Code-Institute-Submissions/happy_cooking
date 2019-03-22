@@ -37,61 +37,27 @@ def my_recipes():
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe ():
-    
     recipes = mongo.db.recipes
-    print(request.form.to_dict())
-    recipes.insert_one({
-        "name": request.form['recipe_name'],
-        "ingredients":request.form['recipe_ingredients'],
-        "instructions":request.form.get('recipe_instructions'),
-        "cooking_time":request.form.get('cooking_time'),
-        "author":request.form.get('recipe_author'),
-        "meal":request.form.get('cuisine'),
-        "dietary_requirement":request.form.get('dietary_requirement'),
-        "serves":request.form.get('serves'),
-    })
+    recipes.insert_one(request.form.to_dict())
     return redirect(url_for('recipes'))
     
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_my_recipes =  mongo.db.recipes.find({"username": session['username']})
+    the_recipe =  mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
+    all_my_recipes =  mongo.db.my_recipes.find()
     return render_template('edit_recipe.html', recipe=the_recipe,
                            my_recipes=all_my_recipes)
-                           
-@app.route('/update_recipe/<recipe_id>')
-def update_recipe(recipe_id):
-    if request.method == 'POST':
-        mongo.db.recipes.update_one(
-            {"_id":  ObjectId(recipe_id)},
-                {
-                    "$set": {
-                        "name": request.form['recipe_name'],
-                        "ingredients":request.form['recipe_ingredients'],
-                        "instructions":request.form.get('recipe_instructions'),
-                        "cooking_time":request.form.get('cooking_time'),
-                        "author":request.form.get('recipe_author'),
-                        "meal":request.form.get('cuisine'),
-                        "dietary_requirement":request.form.get('dietary_requirement'),
-                        "serves":request.form.get('serves'),
-                    }
-            })
-        
-        the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        all_my_recipes =  mongo.db.recipes.find({"username": session['username']})
-        return redirect(url_for('recipes', recipe=the_recipe,
-                               my_recipes=all_my_recipes))
 
     
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.method == 'POST':
+    if request.methods == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = mongo.db.users.find_one({
+        user = mongo.db.users.find({
             'username': username
         })
-        
+        print(user)
         if user:
             if user['password'] == password:
                 session['username'] = username
