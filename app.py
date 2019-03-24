@@ -95,9 +95,9 @@ def login():
                 session['username'] = username
                 return redirect(url_for('my_recipes'))
             else:
-                return ('1 error')
+                return ('Incorrect username or password')
         else:
-            return ('2 error')
+            return ('Invalid username or password')
         return render_template("login.html")
     else:
         return redirect(url_for('index'))    
