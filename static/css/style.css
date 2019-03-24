@@ -1,0 +1,25 @@
+#recipe_container img{
+    height: 200px;
+} 
+div#recipe_container {
+    margin-top: 100px;
+}
+#recipe_container .card-body,#recipe_container .card-text,#recipe_container .card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#recipe_container .card-text{
+    padding: 0;
+    margin: 0;
+}
+
+#recipe_container .col-md-4.mb-5{
+    cursor: pointer;
+}
+
+.recipe_body{
+    background: url(../img/fruit-splash.jpg) repeat;
+    background-size: cover;
+}

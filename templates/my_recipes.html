@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block content %}
 
+{% extends 'base.html' %} {% block content %}
+<div id="my_recipes">
     {% for recipe in my_recipes%}
 
 <hr>
@@ -72,4 +73,6 @@
     {% endfor %}
 <hr>
   </ul>
+  
+</div>
 {% endblock %}

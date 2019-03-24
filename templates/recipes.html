@@ -1,13 +1,57 @@
-{% extends 'base.html'%}
-{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <title>Happy Cooking Application</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/creative.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+</head>
+    <body class="recipe_body">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="padding: 100px;">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#index.html">Happy Cooking</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{url_for('recipes')}}">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{url_for('my_recipes')}}"> Add Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger modal-trigger" href="#modal1">Login</a>
+            <!-- <a class="nav-link js-scroll-trigger" href="#modal1">Log In</a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- main content -->
+<div class="container">
+        
+
+{% block content %}
+<div id="recipe_container">
        {% for row in recipes  | batch(3)  %}
            
     <div class="row">
 
         {% for recipe in row %}
-        
-            <div class="col-md-4 mb-5">
+            <div class="col-md-4 mb-5" onclick="window.location.href='{{ url_for( 'detail' , recipe=recipe._id,action='detail' ) }}';">
                 <div class="card h-100">
                     <img src="/static/img/{{recipe.img}}" />
                     <div class="card-body">
@@ -20,10 +64,6 @@
                         <p class="card-text">{{recipe.dietary_requirement}}</p>  
                         <p class="card-text">{{recipe.serves}}</p>
                         </div>
-
-                    <div class="card-footer">
-                        
-                      </div>  
                     </div>
                 </div>
                 
@@ -35,4 +75,7 @@
         </div>
         
       {% endfor %}  
+      </div>
 {% endblock%}   
+</div>
+</body>

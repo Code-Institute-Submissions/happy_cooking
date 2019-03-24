@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session, escape, request
+from flask import Flask, render_template, redirect, request, url_for, session, escape, request,json
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -59,7 +59,7 @@ def edit_recipe(recipe_id):
     return render_template('edit_recipe.html', recipe=the_recipe,
                            my_recipes=all_my_recipes)
                            
-@app.route('/update_recipe/<recipe_id>')
+@app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
     if request.method == 'POST':
         mongo.db.recipes.update_one(
@@ -72,15 +72,12 @@ def update_recipe(recipe_id):
                         "cooking_time":request.form.get('cooking_time'),
                         "author":request.form.get('recipe_author'),
                         "meal":request.form.get('cuisine'),
-                        "dietary_requirement":request.form.get('dietary_requirement'),
-                        "serves":request.form.get('serves'),
+                        "dietary_requirement":request.form.get('dietary_requirement')
                     }
             })
         
         the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        all_my_recipes =  mongo.db.recipes.find({"username": session['username']})
-        return redirect(url_for('recipes', recipe=the_recipe,
-                               my_recipes=all_my_recipes))
+        return render_template("detail.html", recipe=the_recipe)
 
     
 @app.route('/login', methods=['POST', 'GET'])
@@ -88,10 +85,11 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        
         user = mongo.db.users.find_one({
             'username': username
         })
-        
+        print("username here: " + json.dumps(list(user)))
         if user:
             if user['password'] == password:
                 session['username'] = username
@@ -104,10 +102,21 @@ def login():
     else:
         return redirect(url_for('index'))    
     
-    
-    
-    
 
+@app.route('/detail')
+def detail():
+    action = request.args.get('action')
+    recipe = request.args.get('recipe')
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
+    if action == 'detail':
+        return render_template("detail.html", recipe=the_recipe)
+    elif action == 'edit':
+        return render_template("edit_recipe.html", recipe=the_recipe)
+    elif action == 'delete':
+        mongo.db.recipes.delete_one({"_id": ObjectId(recipe)})
+        recipes = mongo.db.recipes.find({})
+        return render_template("recipes.html", recipes=recipes)
+        
 
 @app.route('/add_recipe')
 def add_recipe():
