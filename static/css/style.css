@@ -20,12 +20,12 @@ div#recipe_container {
 }
 
 .recipe_body{
-    background: url(../img/cupcakes.jpeg) repeat;
+    background: url(../img/blue.jpg) repeat;
     background-size: cover;
 }
 
 .add_recipe{
-    background: url(../img/fruit-splash.jpg) repeat;
+    background: url(../img/candy.jpeg) repeat;
     background-size: cover;
 }
 
@@ -34,11 +34,16 @@ header.masthead{
 }
 
 .base_container{
-    background: -webkit-gradient(linear,left top,left bottom,from(rgba(92,77,66,.8)),to(rgba(92,77,66,6.8))),url(../img/bg-masthead.jpg);
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(92,77,66,.8)),to(rgba(92,77,66,6.8))),url(../img/candy.jpeg);
     background-size: cover;
 }
 
 .recipe_detail{
-    background:url(../img/macroon.jpg);
+    background:url(../img/cakes.jpg);
+    background-size: cover;
+}
+
+.add_recipe_body{
+    background:url(../img/blackberry-fool.jpg);
     background-size: cover;
 }
