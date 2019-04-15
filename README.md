@@ -101,21 +101,21 @@ Most web applicationa are well structured but simple to use as I wanted mine to 
 
 #### Technologies I used for this project is:
 
-⋅⋅* HTML
-⋅⋅* CSS
-⋅⋅* MongoDB
-⋅⋅* Pymongo
-⋅⋅* Python
-⋅⋅* Heroku
-⋅⋅* Flask
-⋅⋅* Javascript
-⋅⋅* startbootstrap 
-⋅⋅* github
-⋅⋅* cloud9
-⋅⋅* Formatter
-⋅⋅* Validator
+* [HTML](https://html.com/)
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [MongoDB](https://www.mongodb.com/)
+* [Pymongo](https://www.w3schools.com/python/python_mongodb_getstarted.asp)
+* [Python](https://www.python.org/)
+* [Heroku](https://www.heroku.com)
+* [Flask](http://flask.pocoo.org/)
+* [Javascript](https://www.javascript.com/)
+* [Startboostrap](https://startbootstrap.com/themes/creative/)
+* [Github](https://github.com/)
+* [Cloud9](https://c9.io/login)
+. [Formatter](https://www.freeformatter.com/html-formatter.html)
+⋅ [Validator](https://validator.w3.org/)
 
-***Deployment of my project:
+### Deployment of my project:
 
 My Deployment was done by opening a terminal and then by using the code git status first followed git add (I put in my file or image) git commit -m "message on what the update was" and the git push to the master branch followed by my username and password.
 
@@ -123,13 +123,13 @@ I deployed my page from github through github pages. I went to settings in my gi
 
 Heroku was used also to deploy my project.
 
-***Credit***
+### Credit
 
 To start bootstrap website where i got my template for my website.
 I got the recipes from Jamie Olivers website and the images too for my website.
 I got my background images from google.com
 
-***Acknowledgements
+### Acknowledgements
 
 I got inspiration on google Images I googled on google.com to see different websites and also for my colour scheme and background colour for my pages in my data-driven  web application.
 I also got the recipes from Jamie Olivers website and the images too for my website.
