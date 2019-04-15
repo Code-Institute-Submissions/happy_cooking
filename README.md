@@ -117,20 +117,19 @@ Most web applicationa are well structured but simple to use as I wanted mine to 
 * [Formatter](https://www.freeformatter.com/html-formatter.html)
 * [Validator](https://validator.w3.org/)
 * [Materialize](http://archives.materializecss.com/0.100.2/forms.html)
+* [Jamie Oliver Recipe site]( https://www.jamieoliver.com/)
 
 
 ### Testing of my project
 
 There were two options of testing my project the first one was by manual testing it by 
 making sure the navbar worked by clicking on the recipe button to link to the recipe page, the login modal popping up and 
-that i was able to login using the username "proxie" and the password "password"
+that i was able to login using the username "proxie" and the password "password".
 
-I tested diffrent charts on each section to see what would work best with my dataset that I had chosen to create the charts with.
-When I created my piechart to my graph.js at first it didnt work as I never closed it with a closing tag but I recorrected this error, it worked straight away and it loaded the data that was to load. 
-All the rest of my charts worked after abit of tweaking of missing brackets for the linechart and I had to figure out a way to pass the € sign as it wouldnt run so that look time but it worked out which I was pleased with.
-I used inspect to test my charts through google chrome for errors as this worked most effective for me.
-I also asked someone on slack to look at it for there advice.
+I tested each section to see that every link worked correctly as i built the website.
+When I created my recipe form  it didnt work as I never put the javascript link to make it come live  but I recorrected this error, it worked straight away and it loaded the data that was to load. 
 
+Also in the terminal I ran my project locally by opening the terminal and the typing in python3 app.py to run the application and this would run my code.
               
             To View a recipe in the recipe page 
          
@@ -143,7 +142,7 @@ I also asked someone on slack to look at it for there advice.
     2. The second one is to click the recipes page on the right handside of the navbar
     and this will bring you to the recipes page.
     
-                        login
+                            login
             
      1.Click on the login button on the right hand corner of the navbar
      2.A login form will pop up like a modal.
@@ -154,7 +153,7 @@ I also asked someone on slack to look at it for there advice.
      
      
      
-                      Add Recipe
+                            Add Recipe
          
      1. Click on the Add recipes button on the right hand corner of the navbar
      2. If you have not logged in using 'proxie' as the username and 'password' as the password then log in.
@@ -167,7 +166,14 @@ I also asked someone on slack to look at it for there advice.
         * Author
         * Meal Type 
         * Dietary Requirement
-    5. Then pressthe recipe =+ button and your recipe will be added to the recipes page.    
+    5. Then pressthe recipe =+ button and your recipe will be added to the recipes page.   
+    
+                        Redirect to the home page
+                
+    1. Press the Happy Cooking logo on the upper left hand corner of the navbar.
+    2. This will redirect you back to the home page.
+    3. Press Home on the navbar from any of the three pages and it will bring you back to the homepage.
+    
         
         
        
@@ -177,12 +183,12 @@ My Deployment was done by opening a terminal and then by using the code git stat
 
 I deployed my page from github through github pages. I went to settings in my github repository and scrolled down to Github pages title and changed my source from disabled to master branch and clicked save. now my website has been deployed.
 
-Heroku was used also to deploy my project.
+Heroku was used also to deploy my project i created an new application and called it happy cooking.
 
 ### Credit
 
 To start bootstrap website where i got my template for my website.
-I got the recipes from [Jamie Olivers website]( https://www.jamieoliver.com/)Jamie Olivers website and the images too for my website.
+I got the recipes from [Jamie Olivers website]( https://www.jamieoliver.com/) and the images too for my website.
 I got my background images from [google images]( https://www.google.ie/)
 
 ### Acknowledgements
