@@ -10,11 +10,11 @@ This is a data-driven web application created for users, my primary target is to
 
 My data-driven web application will be a online cookbook created with  a homepage, a recipes page, my recipes page, and a login form. These pages will allow me to achieve my goals.
 
-⋅⋅* As a user type, I would like to create a recipe page to view recipes.
-⋅⋅* As a user type, I would like to create a add recipes page to add a recipe.
-⋅⋅* As a user type, I would like to achieve a goal of deleting and updating a recipe by editing it.
-⋅⋅* As a user type, I would like to be able to login as a user.
-⋅⋅* My goal was to make information accessible on the site and user friendly, as shown through the  data-driven web application  I have created.
+* As a user type, I would like to create a recipe page to view recipes.
+* As a user type, I would like to create a add recipes page to add a recipe.
+* As a user type, I would like to achieve a goal of deleting and updating a recipe by editing it.
+* As a user type, I would like to be able to login as a user.
+* My goal was to make information accessible on the site and user friendly, as shown through the  data-driven web application  I have created.
 
 
 # Features of my data-driven web application
@@ -44,17 +44,17 @@ Here you can edit which updated the recipe and delete a recipe also which delete
 
 This is where the recipe can be clicked on and then the page for a full recipe shows the following items:
 
-An image of the recipe shown
-The name of the recipe 
-ingredients
-instructions
-cooking time
-author
-cuisine 
-dietary requirement
-serves
-edit button
-delete buttin
+* An image of the recipe shown
+* The name of the recipe 
+* ingredients
+* instructions
+* cooking time
+* author
+* cuisine 
+* dietary requirement
+* serves
+* edit button
+* delete buttin
 
 
 ### Add Recipe 
@@ -80,10 +80,10 @@ Here I have included wire frames of diffrent pages such as the home page, recipe
 My design process for me was to draw my wireframes and add them to my project once i had figured out what I needed to create 
 an acheviable site.
 
-wire frame 1 - homepage
-wireframe 2 - recipe page
-wireframe3 -  add recipes page
-wireframe 4 - login 
+* wire frame 1 - homepage
+* wireframe 2 - recipe page
+* wireframe3 -  add recipes page
+* wireframe 4 - login 
 
 ### Planning  my website
 
@@ -112,8 +112,8 @@ Most web applicationa are well structured but simple to use as I wanted mine to 
 * [Startboostrap](https://startbootstrap.com/themes/creative/)
 * [Github](https://github.com/)
 * [Cloud9](https://c9.io/login)
-. [Formatter](https://www.freeformatter.com/html-formatter.html)
-⋅ [Validator](https://validator.w3.org/)
+* [Formatter](https://www.freeformatter.com/html-formatter.html)
+* [Validator](https://validator.w3.org/)
 
 ### Deployment of my project:
 
