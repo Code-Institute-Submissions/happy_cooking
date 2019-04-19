@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session, escape, request,json
+from flask import Flask, render_template, redirect, request, url_for, session, escape, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
+from bson import json_util
+import datetime
 
 app = Flask(__name__)
 
@@ -20,7 +21,15 @@ def index():
 @app.route('/recipes')
 def recipes():
     recipes = mongo.db.recipes.find({})
+ 
+    recipes = sorted(
+        recipes,
+        key=lambda d: d.get('createdAt',datetime.datetime.now()),
+        reverse=True
+    )
+
     return render_template("recipes.html", recipes=recipes)
+    
 
 
 
@@ -38,9 +47,10 @@ def my_recipes():
 def insert_recipe ():
     
     recipes = mongo.db.recipes
-    print(request.form.to_dict())
+    (request.form.to_dict())
     recipes.insert_one({
-        "name": request.form['recipe_name'],
+        "createdAt": datetime.datetime.now(), 
+        "name": request.form['recipe_name'], 
         "ingredients":request.form['recipe_ingredients'],
         "instructions":request.form.get('recipe_instructions'),
         "cooking_time":request.form.get('cooking_time'),
@@ -88,7 +98,7 @@ def login():
         user = mongo.db.users.find_one({
             'username': username
         })
-        print("username here: " + json.dumps(list(user)))
+        ("username here: " + json.dumps(list(user)))
         if user:
             if user['password'] == password:
                 session['username'] = username
@@ -108,6 +118,7 @@ def detail():
     recipe = request.args.get('recipe')
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
     if action == 'detail':
+        (the_recipe)
         return render_template("detail.html", recipe=the_recipe)
     elif action == 'edit':
         return render_template("edit_recipe.html", recipe=the_recipe)
