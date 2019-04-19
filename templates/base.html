@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Happy Cooking Application</title>
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/creative.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-</head>
+      <title>Happy Cooking Application</title>
+      
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/creative.min.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    </head>
     <body class="base_container">
+      <!-- main content -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="padding: 100px;">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{url_for('index')}}">Happy Cooking</a>
+      <a class="navbar-brand js-scroll-trigger" href="#index.html">Happy Cooking</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,7 +61,7 @@
                     <div class="row">
                       <div class="input-field col s6">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" name='password' type="tel" class="validate">
+                        <input type="password" id="icon_telephone" name='password' type="tel" class="validate">
                         <label for="icon_telephone">Password</label>
                       </div>
                     </div>
@@ -81,7 +82,7 @@
   <!-- Footer -->
   <footer class="bg-light py-3">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; Noelle Browne</div>
+      <div class="small text-center text-muted">Copyright &copy;</div>
     </div>
   </footer>
 
@@ -102,16 +103,16 @@
   
   
   <script>
-      $(document).ready(function(){
-          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-          $('.modal-trigger').leanModal();
-      });
-       $(document).ready(function(){
-       $('.collapsible').collapsible();
-      });
-    $(document).ready(function() {
-      $('select').material_select();
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+    $('.collapsible').collapsible();
+    $('select').material_select();
+
+    $(document).on('change', '.js-search-filter-selector', function(e) {
+      consoe.log('sadasdsa')
+    })
   });
-</script>
-    </body>
+  </script>
+  </body>
 </html>
