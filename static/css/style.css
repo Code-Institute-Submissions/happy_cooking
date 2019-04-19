@@ -43,7 +43,21 @@ header.masthead{
     background-size: cover;
 }
 
-.add_recipe_body{
+.add_recipe_body {
     background:url(../img/blackberry-fool.jpg);
     background-size: cover;
+}
+
+.search-selectors {
+    display: flex;
+    align-items: center;
+}
+
+.search-selector {
+    display: block;
+    margin-right: 10px;
+}
+
+.search-selector:last-child {
+    margin-right: 0
 }
