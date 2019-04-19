@@ -6,7 +6,7 @@ My primary target is to be able to view recipes with ingredients  on avaliablity
 
 [Here is a link to the live version of my project ]()
 
-#  UX 
+# UX 
 
 This is a data-driven web application created for users, my primary target is to achieve the goal of being able view recipes with ingredients  on avaliablity of recipes. this is shown in the recipes page.
 
@@ -20,22 +20,6 @@ My data-driven web application will be a online cookbook created with  a homepag
 
 
 # Features of my data-driven web application
-
-### Header 
-
-The site name is shown up on the left hand corner of the page whic is the logo that brings you to the home page.
-
-The home,recipes,my recipes and login are up on the right hand side of the navbar.These are the buttond that will link you too 
-those pages.
-
-### Footer
-
-footer is at the bottom in home page and add recipes page.
-
-### Index
-
-This is the home page with the navbar link buttons and footer displayed on this page with a button linking to the recipes page.
-
 
 ### Recipes
 
