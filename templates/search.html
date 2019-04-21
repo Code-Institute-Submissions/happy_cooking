@@ -4,18 +4,27 @@
     <div class="search">
       <p class="hidden-xs"><b>Search by:</b></p>
       <div class="search-selectors">
-        <select class="search-selector js-search-filter-selector" data-filter="cuisine">
-          <option value='' disabled selected>Cuisine</option>
-          {% for item in cuisines_json.cuisine | sort %}
-            <option value="{{ item }}">{{ item | title }}</option>
-          {% endfor %}
-        </select>
-        <select class="search-selector js-search-filter-selector" data-filter="allergen">
-          <option value='' selected>Allergen</option>
-          {% for item in allerges_json.allergen | sort %}
-            <option value="{{ item }}">{{ item | title }}</option>
-          {% endfor %}
-        </select>
+        <form action="/recipes">
+          <div width="100%">
+            <div width="33%" style="display:inline-block">
+            <select class="search-selector js-search-filter-selector" data-filter="cuisine" name='cuisine' id='cuisine'> 
+              <option value='' disabled selected>Cuisine</option>
+              {% for item in cuisines_json.cuisine  %}
+                <option value="{{ item }}">{{ item | title }}</option>
+              {% endfor %}
+            </select>
+            </div>
+            <div width="33%" style="display:inline-block">
+            <select class="search-selector js-search-filter-selector" data-filter="allergen" name='allergen' id='allergen'>
+              <option value='' selected>Allergen</option>
+              {% for item in allerges_json.allergen | sort %}
+                <option value="{{ item }}">{{ item | title }}</option>
+              {% endfor %}
+            </select>
+            </div>
+           <input type="submit" value="Search"/>
+       </div>
+      </form>
       </div>
     </div>
   </div>
