@@ -2,6 +2,7 @@
   "cuisine": [
     "Breakfast",
     "Lunch",
-    "Dinner"
+    "Dinner",
+    "Dessert"
   ]
 }

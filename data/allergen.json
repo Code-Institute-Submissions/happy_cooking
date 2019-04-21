@@ -2,7 +2,7 @@
   "allergen": [
     "dairy",
     "eggs",
-    "crustacean",
+    "cheese",
     "nuts",
     "peanuts",
     "wheat",
@@ -10,7 +10,8 @@
     "celery",
     "mustard",
     "sesame",
-    "lupin",
-    "fish",
+    "fish"
   ]
 }
+
+  
