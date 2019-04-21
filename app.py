@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, e
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from bson import json_util
+import json
 import datetime
 
 app = Flask(__name__)
@@ -20,15 +21,26 @@ def index():
     
 @app.route('/recipes')
 def recipes():
-    recipes = mongo.db.recipes.find({})
- 
+    
+    cuisine =request.args.get("cuisine")
+    allergen = request.args.get("allergen")
+    query = {}
+    if cuisine:
+        query["meal"] = cuisine
+    if allergen:
+        query["allergen"] = {"$in": [ allergen]}
+    recipes = mongo.db.recipes.find(query)
+
     recipes = sorted(
         recipes,
-        key=lambda d: d.get('createdAt',datetime.datetime.now()),
+        key=lambda d: str(d.get('createdAt',datetime.datetime.now())),
         reverse=True
     )
 
-    return render_template("recipes.html", recipes=recipes)
+    cuisines_json = json.loads(open('data/cuisine.json').read())
+    print(cuisines_json)
+    allerges_json = json.loads(open('data/allergen.json').read())
+    return render_template("recipes.html", recipes=recipes,cuisines_json=cuisines_json,allerges_json=allerges_json)
     
 
 
@@ -116,16 +128,18 @@ def login():
 def detail():
     action = request.args.get('action')
     recipe = request.args.get('recipe')
+    cuisines_json = json.loads(open('data/cuisine.json').read())
+    allerges_json = json.loads(open('data/allergen.json').read())
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
     if action == 'detail':
         (the_recipe)
-        return render_template("detail.html", recipe=the_recipe)
+        return render_template("detail.html", recipe=the_recipe,cuisines_json=cuisines_json,allerges_json=allerges_json)
     elif action == 'edit':
-        return render_template("edit_recipe.html", recipe=the_recipe)
+        return render_template("edit_recipe.html", recipe=the_recipe,cuisines_json=cuisines_json,allerges_json=allerges_json)
     elif action == 'delete':
         mongo.db.recipes.delete_one({"_id": ObjectId(recipe)})
         recipes = mongo.db.recipes.find({})
-        return render_template("recipes.html", recipes=recipes)
+        return render_template("recipes.html", recipes=recipes,cuisines_json=cuisines_json,allerges_json=allerges_json)
         
 
 @app.route('/add_recipe')
