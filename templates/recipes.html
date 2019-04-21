@@ -42,6 +42,11 @@
 
 <!-- main content -->
 <div class="container">
+  <div style="padding-top:100px;">
+  {% block search %}
+    {% include 'search.html' %}
+  {% endblock search %}   
+  </div>
         
 
 {% block content %}
