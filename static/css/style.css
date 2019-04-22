@@ -20,7 +20,7 @@ div#recipe_container {
 }
 
 .recipe_body{
-    background: url(../img/blue.jpg) repeat;
+    background: url(../img/candy.jpeg) repeat;
     background-size: cover;
 }
 
@@ -39,12 +39,12 @@ header.masthead{
 }
 
 .recipe_detail{
-    background:url(../img/cakes.jpg);
+    background:url(../img/candy.jpeg);
     background-size: cover;
 }
 
 .add_recipe_body {
-    background:url(../img/blackberry-fool.jpg);
+    background:url(../img/candy.jpeg);
     background-size: cover;
 }
 
@@ -61,3 +61,38 @@ header.masthead{
 .search-selector:last-child {
     margin-right: 0
 }
+
+.add-button {
+    color: 	#FFC0CB;
+}
+
+.text-gray{
+    color: #6c757d!important; 
+}
+
+.background-white{
+    background:white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .background-white-mobile{
+         background:white;
+    }
+}
+
+.border-footer-fixed{
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+}
+
+.margin-top-200{
+    margin-top:200px;
+}
+
+.margin-bottom: {
+    margin-bottom: 100px;
+}
+
+

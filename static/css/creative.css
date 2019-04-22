@@ -10365,6 +10365,10 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-gray {
+  color: #6c757d !important;
+}
+
 .text-primary {
   color: #f4623a !important;
 }
