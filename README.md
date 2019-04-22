@@ -102,7 +102,7 @@ Most web applicationa are well structured but simple to use as I wanted mine to 
 * [Validator](https://validator.w3.org/)
 * [Materialize](http://archives.materializecss.com/0.100.2/forms.html)
 * [Jamie Oliver Recipe site]( https://www.jamieoliver.com/)
-
+* [Holistics - draw.oi](https://www.holistics.io/blog/top-5-free-database-diagram-design-tools/)
 
 ### Testing of my project
 
@@ -158,8 +158,7 @@ Also in the terminal I ran my project locally by opening the terminal and the ty
     2. This will redirect you back to the home page.
     3. Press Home on the navbar from any of the three pages and it will bring you back to the homepage.
     
-        
-        
+
        
 ### Deployment of my project
 
@@ -174,6 +173,7 @@ Heroku was used also to deploy my project i created an new application and calle
 To start bootstrap website where i got my template for my website.
 I got the recipes from [Jamie Olivers website]( https://www.jamieoliver.com/) and the images too for my website.
 I got my background images from [google images]( https://www.google.ie/)
+I did my dataschema drawing in draw.io in [Holistics](https://www.holistics.io/blog/top-5-free-database-diagram-design-tools/) 
 
 ### Acknowledgements
 
