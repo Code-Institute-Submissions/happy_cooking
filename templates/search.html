@@ -7,22 +7,21 @@
         <form action="/recipes">
           <div width="100%">
             <div width="33%" style="display:inline-block">
-            <select class="search-selector js-search-filter-selector" data-filter="cuisine" name='cuisine' id='cuisine'> 
-              <option value='' disabled selected>Cuisine</option>
+            <select class="js-search-filter-selector" data-filter="cuisine" name='cuisine' id='cuisine'>
               {% for item in cuisines_json.cuisine  %}
                 <option value="{{ item }}">{{ item | title }}</option>
               {% endfor %}
             </select>
             </div>
             <div width="33%" style="display:inline-block">
-            <select class="search-selector js-search-filter-selector" data-filter="allergen" name='allergen' id='allergen'>
-              <option value='' selected>Allergen</option>
+            <select class="js-search-filter-selector" data-filter="allergen" name='allergen' id='allergen'>
               {% for item in allerges_json.allergen | sort %}
                 <option value="{{ item }}">{{ item | title }}</option>
               {% endfor %}
             </select>
             </div>
-           <input type="submit" value="Search"/>
+           <button class="btn waves-effect waves-light" style="background:pink" type="submit" value="Search">SEARCH
+             </button>
        </div>
       </form>
       </div>
