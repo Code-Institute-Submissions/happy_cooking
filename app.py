@@ -38,7 +38,6 @@ def recipes():
     )
 
     cuisines_json = json.loads(open('data/cuisine.json').read())
-    print(cuisines_json)
     allerges_json = json.loads(open('data/allergen.json').read())
     return render_template("recipes.html", recipes=recipes,cuisines_json=cuisines_json,allerges_json=allerges_json)
     
@@ -60,14 +59,15 @@ def insert_recipe ():
     
     recipes = mongo.db.recipes
     (request.form.to_dict())
+    (request.form.to_dict())
     recipes.insert_one({
         "createdAt": datetime.datetime.now(), 
         "name": request.form['recipe_name'], 
-        "ingredients":request.form['recipe_ingredients'],
+        "ingredients":request.form['recipe_ingredients'],     
         "instructions":request.form.get('recipe_instructions'),
         "cooking_time":request.form.get('cooking_time'),
         "author":request.form.get('recipe_author'),
-        "meal":request.form.get('cuisine'),
+        "meal":request.form.get('meal'),
         "dietary_requirement":request.form.get('dietary_requirement'),
         "serves":request.form.get('serves'),
     })
@@ -83,16 +83,17 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
     if request.method == 'POST':
+        (request.form.to_dict())
         mongo.db.recipes.update_one(
             {"_id":  ObjectId(recipe_id)},
                 {
                     "$set": {
                         "name": request.form['recipe_name'],
                         "ingredients":request.form['recipe_ingredients'],
-                        "instructions":request.form.get('recipe_instructions'),
+                        "recipe_method":request.form.get('recipe_instructions'),
                         "cooking_time":request.form.get('cooking_time'),
                         "author":request.form.get('recipe_author'),
-                        "meal":request.form.get('cuisine'),
+                        "meal":request.form.get('meal'),
                         "dietary_requirement":request.form.get('dietary_requirement')
                     }
             })

@@ -35,11 +35,11 @@
   <div class="input-field col s12">
     <i class="material-icons prefix">dvr</i>
     <textarea
-      name="recipe_meathod"
-      id="recipe_meathod"
+      name="recipe_method"
+      id="recipe_method"
       class="materialize-textarea"
     >{{recipe.instructions}}</textarea>
-    <label for="icon_meathod">Recipe Method</label>
+    <label for="icon_method">Recipe Method</label>
   </div>
 </div>
 
@@ -70,11 +70,12 @@
 <div class="row">
   <div class="input-field col s12">
     <i class="material-icons prefix">person</i>
-    <select id="cuisine" name="cuisine">
+    <select id="meal" name="meal">
       <option value="" disabled selected>Choose your Cuisine</option>
-      <option value="1">Breakfast</option>
-      <option value="2">Lunch</option>
-      <option value="3">Dinner</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+      <option value="Dessert">Dinner</option>
                        
     </select>
     <label>Meal Type</label>
@@ -84,15 +85,15 @@
 <div class="row">
   <div class="input-field col s12">
     <i class="material-icons prefix">restaurant</i>
-    <select multiple>
-      <option value="" disabled selected>Choose your dietary requirement</option>
-      <option value="1">Dairy-free</option>
-      <option value="2">Gluten-free</option>
-      <option value="3">Vegetarian</option>
-      <option value="3">Vegan</option>
-      <option value="4">No requirement needed</option>
+    <select multiple id="dietary_requirement" name="dietary_requirement">
+      <option value  disabled selected>Choose your dietary requirement</option>
+      <option value="Dairy-free">Dairy-free</option> 
+      <option value="Gluten-free">Gluten-free</option> 
+      <option value="Vegetarian">Vegetarian</option> 
+      <option value="Vegan">Vegan</option>
+      <option value="No requirement needed">No requirement needed</option>
     </select>
-    <label>Dietary Requirement</label>
+    <label>Dietary Requirement: </label>
   </div>
 </div>
 
