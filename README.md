@@ -66,10 +66,11 @@ Here I have included wire frames of diffrent pages such as the home page, recipe
 My design process for me was to draw my wireframes and add them to my project once i had figured out what I needed to create 
 an acheviable site.
 
-* wire frame 1 - homepage
-* wireframe 2 - recipe page
-* wireframe3 -  add recipes page
-* wireframe 4 - login 
+* [Homepage wireframe](https://github.com/noellebrowne/happy_cooking/blob/master/Wireframes/homepage.jpg "Homepage")
+* [Recipe page wireframe](https://github.com/noellebrowne/happy_cooking/blob/master/Wireframes/recipes.jpg "Recipes")
+* [Add recipes page wireframe](https://github.com/noellebrowne/happy_cooking/blob/master/Wireframes/addrecipes.jpg "Add recipe")
+* [Login wireframe](https://github.com/noellebrowne/happy_cooking/blob/master/Wireframes/login.jpg "login")
+
 
 ### Planning  my website
 
