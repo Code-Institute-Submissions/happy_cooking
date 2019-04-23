@@ -185,14 +185,6 @@ Also in the terminal I ran my project locally by opening the terminal and the ty
 ### Deployment of my project
 
 
-I deployed my page from github through github pages. I went to settings in my github repository and scrolled down to Github pages title and changed my source from disabled to master branch and clicked save. now my website has been deployed.
-
-Heroku was used also to deploy my project i created an new application and called it happy cooking.
-                
-                    
-                       
-                       
-                       
                        
                        
                        
