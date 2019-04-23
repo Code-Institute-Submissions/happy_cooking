@@ -1,118 +1,106 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
       <title>Happy Cooking Application</title>
-      
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link rel="stylesheet" href="{{url_for('static', filename='css/creative.min.css')}}">
       <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    </head>
-    <body class="base_container">
+   </head>
+   <body class="base_container">
       <!-- main content -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="padding: 100px;">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{url_for('index')}}">Happy Cooking</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-center background-white-mobile" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{url_for('index')}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{url_for('recipes')}}">Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{url_for('add_recipe')}}"> Add Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger modal-trigger" href="#modal1">Login</a>
-            <!-- <a class="nav-link js-scroll-trigger" href="#modal1">Log In</a> -->
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<!-- main content -->
-    <div class="container">
-        
-        {% block content %}
-        {% endblock %}
-        <div id="modal1" class="modal" style="width: 500px;height:unset;">
-            <div class="modal-content">
-              <h4>Login</h4>
-              <div class="row">
-                  <form class="col s12" method="POST" action="{{url_for('login')}}">
-                    <div class="row">
-                      <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" name='username' type="text" class="validate">
-                        <label for="icon_prefix">Username</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field col s6">
-                        <i class="material-icons prefix">lock</i>
-                        <input type="password" id="icon_telephone" name='password' type="tel" class="validate">
-                        <label for="icon_telephone">Password</label>
-                      </div>
-                    </div>
-                    <div class="row ">
-                      <div class="col s6 text-center">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Login
-                            <i class="material-icons right">send</i>
-                          </button>
-                          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                        </div>
-                    </div>
-                  </form>
-                </div>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="padding: 100px;">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{{url_for('index')}}">Happy Cooking</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center background-white-mobile" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="{{url_for('index')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="{{url_for('recipes')}}">Recipes</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="{{url_for('add_recipe')}}"> Add Recipes</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger modal-trigger" href="#modal1">Login</a>
+                     <!-- <a class="nav-link js-scroll-trigger" href="#modal1">Log In</a> -->
+                  </li>
+               </ul>
             </div>
-          </div>
-    </div>
-     
-  <!-- Footer -->
-  <footer class="bg-light py-3 border-footer-fixed">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; Noelle Browne</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="{{url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-  <script src="{{url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="{{url_for('static', filename='js/creative.min.js')}}"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
-  
-  
-  
-  <script>
-  $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-    $('.collapsible').collapsible();
-    $('select').material_select();
-
-    $(document).on('change', '.js-search-filter-selector', function(e) {
-      consoe.log('sadasdsa')
-    })
-  });
-  </script>
-  </body>
+         </div>
+      </nav>
+      <!-- main content -->
+      <div class="container">
+         {% block content %}
+         {% endblock %}
+         <div id="modal1" class="modal" style="width: 500px;height:unset;">
+            <div class="modal-content">
+               <h4>Login</h4>
+               <div class="row">
+                  <form class="col s12" method="POST" action="{{url_for('login')}}">
+                     <div class="row">
+                        <div class="input-field col s6">
+                           <i class="material-icons prefix">account_circle</i>
+                           <input id="icon_prefix" name='username' type="text" class="validate">
+                           <label for="icon_prefix">Username</label>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="input-field col s6">
+                           <i class="material-icons prefix">lock</i>
+                           <input type="password" id="icon_telephone" name='password' type="tel" class="validate">
+                           <label for="icon_telephone">Password</label>
+                        </div>
+                     </div>
+                     <div class="row ">
+                        <div class="col s6 text-center">
+                           <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                           <i class="material-icons right">send</i>
+                           </button>
+                           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="bg-light py-3 border-footer-fixed">
+         <div class="container">
+            <div class="small text-center text-muted">Copyright &copy; Noelle Browne</div>
+         </div>
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+      <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      <!-- Plugin JavaScript -->
+      <script src="{{url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+      <script src="{{url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+      <!-- Custom scripts for this template -->
+      <script src="{{url_for('static', filename='js/creative.min.js')}}"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+      <script>
+         $(document).ready(function(){
+           // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+           $('.modal-trigger').leanModal();
+           $('.collapsible').collapsible();
+           $('select').material_select();
+         
+           $(document).on('change', '.js-search-filter-selector', function(e) {
+             consoe.log('sadasdsa')
+           })
+         });
+      </script>
+   </body>
 </html>
