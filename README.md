@@ -151,6 +151,7 @@ Also in the terminal I ran my project locally by opening the terminal and the ty
         * Author
         * Meal Type 
         * Dietary Requirement
+        * serves
     5. Then pressthe recipe =+ button and your recipe will be added to the recipes page.   
     
                         Redirect to the home page
@@ -159,15 +160,153 @@ Also in the terminal I ran my project locally by opening the terminal and the ty
     2. This will redirect you back to the home page.
     3. Press Home on the navbar from any of the three pages and it will bring you back to the homepage.
     
+                                 run
+                            
+    1. open terminal.
+    2. type in "python3 app.py"
+    3. command will run link for application
+    
+    
+                             Create connection
+                            
+    1. Go to "Command Line Tools".
+    2. Click on "Connect Instructions"
+    3. This will bring up three options : connect with the mongo shell, Connect your application and connect with MongoDB compass
+    4. Click on "connect with the mongo shell"
+    5. Then click "I have the mongo shell installed"
+    6. Select your Mongo Shell version or if not sure insert "mongo --version" into terminal to check
+    7. Then insert the connection string in your command line.
+                                                
+                         
+                         
+    
 
        
 ### Deployment of my project
 
-My Deployment was done by opening a terminal and then by using the code git status first followed git add (I put in my file or image) git commit -m "message on what the update was" and the git push to the master branch followed by my username and password.
 
 I deployed my page from github through github pages. I went to settings in my github repository and scrolled down to Github pages title and changed my source from disabled to master branch and clicked save. now my website has been deployed.
 
 Heroku was used also to deploy my project i created an new application and called it happy cooking.
+                
+                    
+                       
+                       
+                       
+                       
+                       
+                       
+                        deployment of project through github 
+                
+    1. Go to the terminal 
+    2. Typed in git add "filename of what you want to push" and press enter key
+    3. Typed in commit -m "type in the message that I would explain about the commit in quotations"
+    4. Repeat if neccessary for more files 
+    5. Typed in  git push.
+    6. Typed in username for github
+    7. Typed in password for guthub 
+    8. files are now pushed to github
+
+
+                        
+                       
+                       deployment of page through github pages
+                       
+                        
+                
+    1.Go to the github repository of happy cooking
+    2. Then click on settings up on the right handside of the screen under the watch button
+    3. Scroll down to the Github Pages
+    4. In the container there is a source heading and a option button that has the word "none" with a little arrow pointing down the right
+    5. Click on this and it will give you three options master branch, master branch/docs folder or none.
+    6. click the master branch.
+                      
+                      
+                      
+                      
+                      
+                        creating up herokua app
+                
+    1. Log in using username and password
+    2. In the personal page click the "NEW" button
+    3. Click "Create new app"
+    4. This brought me to Create new app page
+    5. Type in an app name you want to call the app i called mine happy_cooking
+    6. Choose a region united states or europe, i choose europe
+    7. Press "create app" button.
+    8. The app is now created.
+    
+    
+    
+    
+                        Create a new Git repository
+                        
+    1. Type in "cd my-project/" in the terminal
+    2. Next type in "git init"
+    3. After that I typed in "heroku git:remote -a happy_cooking"                    
+                        
+            set up Deployment to Heroku in terminal of cloud9
+                
+    1. Go to the "deploy" page in heroku app
+    2. To set up heroku deployment from github to heroku scroll down to "Deploy using Heroku Git" section
+    3. Typed in "heroku login" to the terminal of cloud9
+    5. Typed in "username" of my heroku username to the terminal of cloud9
+    6. Types in "password" of my heroku password to the terminal of cloud9
+    
+    
+                     set up Deployment to Heroku app
+                
+    1. Go to the "settings" page in heroku app
+    2. To set up heroku config vars from cloud9 to heroku scroll down  and click on "Reveal Config Vars" section:
+    
+    3. Typed in "IP" to KEY and "0.0.0.0" to value 
+    4. Typed in "PORT" to KEY and "5000" to value 
+    5. Typed in "MONGO_URI" to KEY and "mongodb+srv://<username>:<password>@cluster0-ryuq4.mongodb.net/happy_cooking?retryWrites=true" to value 
+    6. Typed in "SECRET_KEY" to KEY and "<secret_key>"" to value 
+    
+                connected to heroku config vars through cloud9 in app.py
+             
+    1. app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+    2. app.config["MONGO_DBNAME"] = 'happy_cooking'
+    3. app.config["MONGO_URI"] = os.environ.get('MONGO_URI')  
+    
+    
+                Commit my code to the repository and deploy it to Heroku using cloud9 terminal 
+                
+    1. Open terminal
+    2. Typed in git add .
+    3. Typed in git commit -am "message to explain about the commit you are commiting"
+    4. Typed in git push heroku master
+    5. Its pushed now.
+    
+    
+    
+                         
+                setting up mongodb database for collection to connect to deploy to database
+                          
+    1.Sign up using first name,last name and email address.
+    2. Choose M0, the free forever tier.
+    3. Scroll right down to the bottom of the page, click on the little arrow, and type cluster name.
+    4.Then click on the create cluster button.
+    5.Click on the security tab 
+    6.Create a username
+    7.Create a password
+    8. select allow access from anywhere
+    
+
+                Create a collection for data to deploy when recipes are added in web application
+                            
+    1. click on the collections button
+    2. click Create Database button
+    3. enter "DATABASE NAME"
+    4. enter "COLLECTION NAME"
+    5.click "create" button
+    6. click insert document and enter in data of choice to database
+
+        
+                                  
+                    
+                            
 
 ### Credit
 
